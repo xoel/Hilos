@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import javax.swing.JPanel;
 
 public class Tablero extends JPanel {
-
+    //TODO EJEMPLO DE PATRON SINGLENTON
     private static Tablero tablero = new Tablero();
     private static ArrayList<Bola> listaBolas;
 
@@ -35,7 +35,7 @@ public class Tablero extends JPanel {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        // Dibujamos el nÂº de bolas actual (debug)
+        // Dibujamos el nº de bolas actual (debug)
         g.drawString(listaBolas.size() + "", 160, 10);
         
         for (int i = listaBolas.size() - 1; i >= 0; i--) {

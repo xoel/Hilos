@@ -22,7 +22,7 @@ public class Bolas implements ActionListener {
     private static final String cArchivo = "Archivo";
     private static final String cDisparoLento = "Disparo Lento";
     private static final String cDisparoNormal = "Disparo Normal";
-    private static final String cDisparoRapido = "Disparo Rápido";
+    private static final String cDisparoRapido = "Disparo Rapido";
     private static final String cBolaDisparo = "Tipo disparo";
     private static final String cBolaRebota = "Tipo rebota";
     private static final String cSalir = "Salir";
