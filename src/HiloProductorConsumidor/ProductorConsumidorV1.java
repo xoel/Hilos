@@ -2,9 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package HjiloProductorConsumidor;
+package HiloProductorConsumidor;
 
-import HjiloProductorConsumidor.ProductorConsumidorV1.Velocidad;
+import HiloProductorConsumidor.ProductorConsumidorV1.Velocidad;
 
 /**
  *
