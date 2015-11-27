@@ -8,9 +8,9 @@ public class Buffer {
     private boolean disponible = false;
 
     public synchronized String get() throws InterruptedException {
-        while (!disponible) 
+        while (!disponible){ 
             wait();
-        
+        }
         disponible = false;
         System.out.println("GET " + str);
         notify();
