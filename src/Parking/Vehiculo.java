@@ -5,12 +5,15 @@
 package Parking;
 
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
 /**
  *
  * @author xvazqdios
  */
 public class Vehiculo extends Thread{
-    private String nombre;
     private Aparcamiento aparcamiento;
 
     public Vehiculo(String nombre,Aparcamiento aparcamiento) {
@@ -19,28 +22,17 @@ public class Vehiculo extends Thread{
     }
 
     @Override
-    public void run() {
-        //try {
-            //wait(new Random().nextInt(250));            
+    public void run() {      
             aparcamiento.aparcar(this);
-            try {
-                wait(new Random().nextInt(500));
-            } catch (InterruptedException ex) {
-                System.err.println("Wait interrumpido mientras estaba aparcao:"+ex);
-            }
+        try {
+            sleep(new Random().nextInt(500));
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Vehiculo.class.getName()).log(Level.SEVERE, null, ex);
+        }
             aparcamiento.salir(this);
-//        } catch (InterruptedException ex) {
-//            System.err.println("Wait interrempido antes de buscar aparcamiento");
-//        }
+
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
     
     
     

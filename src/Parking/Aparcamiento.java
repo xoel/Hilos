@@ -5,6 +5,7 @@
 package Parking;
 
 
+
 /**
  *
  * @author xvazqdios
@@ -26,6 +27,7 @@ public class Aparcamiento {
             }
         }
         aparcamos(veh);
+        
     }
 
     public synchronized void salir(Vehiculo veh) {
@@ -41,11 +43,12 @@ public class Aparcamiento {
         }
         return false;
     }
-
+    //Estos metodos deberian estar sincronizados si intentamos llamarlos desde otro sitio
+    //Si solo son llamados desde el syncroniced no deberia tener problema
     private void aparcamos(Vehiculo veh){
         for (int i = 0; i < listaVehiculos.length; i++) {
             if(listaVehiculos[i]==null){
-                System.out.println(veh.getNombre()+": Aparcaooo");
+                System.out.println(veh.getName()+": Aparcaooo en la plaza: "+i);
                 listaVehiculos[i]=veh;
                 return;
             }
@@ -56,7 +59,7 @@ public class Aparcamiento {
     private void salimos(Vehiculo veh){
         for (int i = 0; i < listaVehiculos.length; i++) {
             if(listaVehiculos[i]==veh){
-                System.out.println(veh.getNombre()+": Me doy el piro vampiro");
+                System.out.println(veh.getName()+": Me doy el piro vampiro de la plaza: "+i);
                 listaVehiculos[i]=null;
             }
         }
