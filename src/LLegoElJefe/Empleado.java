@@ -18,7 +18,7 @@ public class Empleado extends Personal {
     @Override
     public void aTrabajar() {
         super.aTrabajar();
-        super.getSaludo().saludoEmpleado();
+        super.getSaludo().saludoEmpleado(this.getNombre());
         
       
     }

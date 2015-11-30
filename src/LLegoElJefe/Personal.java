@@ -32,7 +32,7 @@ public abstract class Personal extends Thread{
     
     
     public void aTrabajar(){
-        System.out.println("Soy "+nombre);
+        System.out.print("Soy "+nombre+": ");
     }
     
      

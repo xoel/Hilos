@@ -9,21 +9,22 @@ package LLegoElJefe;
  * @author xvazqdios
  */
 public class Saludo {
-    int id;
     private boolean haSaludado;
 
     public Saludo() {
         this.haSaludado = false;
     }
     
-    public synchronized void saludoEmpleado(){
+    public synchronized void saludoEmpleado(String nombre){
         if(haSaludado){
-            System.out.println("Buenos dias, soy "+id+" me voy a currar");
+            //si el jefe ya ha saludado nos ponemos a currar
+            System.out.println("Buenos dias, me voy a currar");
         }else{
-            System.out.println("Soy "+id+" me voy a echar una cabezadita");
+            //si no ha llegado nos ponemos a dormir hasta que lelga
+            System.out.println("Me voy a echar una cabezadita");
             try {
                 wait();
-                System.out.println("Hola jefe, soy "+id+" me pongo a currar");
+                System.out.println("Soy "+nombre+": Bienvenido Jefe, ahora mismo  me pongo a currar");
             } catch (InterruptedException ex) {
                 System.err.println("Interrupted Exception: "+ex);
                 
@@ -31,12 +32,10 @@ public class Saludo {
             
         }
     }
-
-    public void setId(int id) {
-        this.id = id;
-    }
     
     public synchronized void saludoJefe(){
+        //en cuanto llega el jefe ponemos la variable a true para los que lleguen
+        //y "despertamos" a los que estaban sobando(wait) con un notifyAll
         haSaludado=true;
         System.out.println("Buenos dias chavales, a ponerse acurrar");
         notifyAll();
